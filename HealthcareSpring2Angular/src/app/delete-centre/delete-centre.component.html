@@ -1,0 +1,36 @@
+
+<div>
+  <h2 class="text-centre">Delete Centre</h2>
+  <button (click)="showDetails()" class="btn btn-success">Show Centre</button>
+
+  <tbody>
+  <table *ngIf="val">   
+  <thead>
+      <tr> 
+        <th (click)='change("centreId")'>ID</th>    
+        <th (click)='change("centreName")'>Name</th>    
+        <th (click)='change("centreContactNumber")'>Contact Number</th>  
+        <th (click)='change("centreAddress")'>Address</th>    
+  
+        
+        <th colspan="2">Action</th>       
+      </tr>  
+    </thead>  
+    <tbody>
+      <!--<tr> 
+        <th >ID:<input [(ngModel)]="SearchID"  ></th>    
+        <th >ID:<input [(ngModel)]="SearchID"  ></th>    
+        <th >Name:<input [(ngModel)]="SearchName"  ></th>    
+         
+        <th colspan="2"></th>    
+      </tr>-->
+      
+      <tr *ngFor="let centre of centres">  
+        <td >{{centre.centreId}}</td> 
+        <td >{{centre.centreName}}</td>
+        <td >{{centre.centreContactNumber}}</td>
+        <td >{{centre.centreAddress}}</td> 
+        <td><button (click)="deleteCentre(centre)" class="btn btn-success">Delete Centre</button></td> &nbsp;&nbsp;&nbsp; 
+      </tr>  
+    </tbody> 
+    </table>

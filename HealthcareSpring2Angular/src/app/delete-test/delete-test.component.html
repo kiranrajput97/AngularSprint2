@@ -1,0 +1,35 @@
+<div>
+  <h2 class="text-centre">Delete Test</h2>
+    <button (click)="showDetails()" class="btn2 btn-success">Show Test</button>
+  
+    <tbody>
+    <table *ngIf="val">   
+    <thead>
+        <tr> 
+          <th (click)='change("centreId")'>CENTRE ID</th>    
+          <th (click)='change("testId")'>TEST ID</th>    
+          <th (click)='change("testName")' >Name</th>    
+          
+          <th colspan="2">Action</th>       
+        </tr>  
+      </thead>  
+      <tbody>
+       <!--- <tr> 
+          <th >ID:<input [(ngModel)]="SearchID"  ></th>    
+          <th >ID:<input [(ngModel)]="SearchID"  ></th>    
+          <th >Name:<input [(ngModel)]="SearchName"  ></th>    
+           
+          <th colspan="2"></th>    
+        </tr>-->
+        
+        <tr *ngFor="let test of tests" >
+          <td >{{test.centre.centreId}}</td>
+          <td >{{test.testId}}</td> 
+          <td >{{test.testName}}</td>
+          <td><button (click)="deleteTest(test.testId)" class="btn btn-success">Delete Test</button></td>  
+        </tr>  
+      </tbody> 
+      </table>
+      
+</div>
+

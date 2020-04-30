@@ -1,0 +1,69 @@
+<div>
+  <h2 class="text-centre">Add Test</h2>
+  <button (click)="showDetails()" class="btn btn-success">Show Test</button>
+
+  <tbody>
+  <table *ngIf="val">   
+  <thead>
+      <tr> 
+        <th (click)='change("centres")'>CENTRE ID</th>    
+        <th (click)='change("testId")'>ID</th>    
+        <th (click)='change("testName")' >Name</th> 
+      </tr>  
+    </thead> 
+    <thead>
+      <tr>
+        <th>CENTRE ID</th>
+        <th>ID</th>
+        <th>Name</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <!--<tr> 
+        <th >ID:<input [(ngModel)]="SearchID"  ></th>    
+        <th >ID:<input [(ngModel)]="SearchID"  ></th>    
+        <th >Name:<input [(ngModel)]="SearchName"  ></th>    
+         
+        <th colspan="2"></th>    
+      </tr>-->
+      
+      <tr *ngFor="let test of tests" >
+        <td >{{test.centre.centreId}}</td>
+        <td >{{test.testId}}</td> 
+        <td >{{test.testName}}</td> 
+          
+      </tr>  
+    </tbody> 
+    </table> 
+    
+</div>
+<br>
+<br>
+<br>
+<section class="col-md-4 mx-auto">
+    <h2 class="text-centre">Add Test</h2>
+    <div class="alert alert-success" *ngIf="msg != undefined">{{msg}}</div>
+    <div class="alert alert-danger" *ngIf="errorMsg != undefined" [innerHTML]="errorMsg"></div>
+  <form #frm="ngForm" (ngSubmit)="addTest()">
+    <div>Test Centre Id</div>
+    <select  [(ngModel)]="test.centre.centreId" name="source" class="form-control">
+
+      <option>--Available centres--</option>
+      <option *ngFor="let test of tests" >{{test.centre.centreId}}</option>
+  
+      </select>
+
+      <div>Test Id</div>
+      <div><input type="number" name="tid" [(ngModel)]="test.testId" required #modelcid="ngModel" class="form-control"/></div>
+      <div class="alert alert-danger" *ngIf="modelcid.invalid && modelcid.touched">Test Id is required</div>
+
+      <div>Test Name</div>
+      <div><input type="text" name="tname" [(ngModel)]="test.testName" required #mlcname="ngModel" class="form-control"/></div>
+      <div class="alert alert-danger" *ngIf="mlcname.invalid && mlcname.touched">Test Name is required</div>
+
+      <div class="mt-2 text-centre"><input type="submit" value="Add Test" [disabled]="!frm.valid" class="btn btn-danger"/></div>
+
+  </form>
+</section>
+

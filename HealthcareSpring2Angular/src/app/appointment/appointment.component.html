@@ -1,0 +1,39 @@
+<div>
+    <button (click)="showDetails()" class="btn2 btn-success">Show Appointments</button>
+  
+    <tbody>
+    <table *ngIf="val">   
+    <thead>
+        <tr> 
+          <th (click)='change("appointmentId")'>   APPOINTMENT ID</th>    
+          <th (click)='change("appointmentDate")'> APPOINTMENT DATE</th> 
+          <th (click)='change("appointmentTime")'> APPOINTMENT TIME</th> 
+          <!-- <th (click)='change("userId")'>          USER ID</th> 
+          <th (click)='change("centreId")'>        CENTRE ID</th>  -->
+          <th (click)='change("testId")'>          TEST NAME</th> 
+         
+          <!--<th (click)='change("approval_status")'>  APPROVAL STATUS</th> -->
+          <!-- <th colspan="2">Action</th>        -->
+        </tr>  
+      </thead>  
+      <tbody>
+        
+        <tr *ngFor="let appointment of appointments">  
+          <td >{{appointment.appointmentId}}</td>
+          <td >{{appointment.appointmentDate}}</td>
+          <td >{{appointment.appointmentTime}}</td>
+          <!-- <td >{{appointment.userId.userId}}</td>
+          <td >{{appointment.centreId.centreId}}</td> -->
+          <td >{{appointment.test.testName}}</td>
+          
+          <!--<td >{{appointment.approval_status}}</td> -->
+                
+          
+         
+          <!-- <td><button class="btn btn-success">Approve Appointment</button></td>   -->
+          
+        </tr>  
+      </tbody> 
+      </table>
+      
+</div>

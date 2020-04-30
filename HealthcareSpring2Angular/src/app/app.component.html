@@ -1,0 +1,55 @@
+<!--<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <mat-icon>domain</mat-icon>
+    <h1>Health Care Management System</h1>
+    <span class="menu-spacer"></span>
+    <div>
+      
+      <a mat-button [routerLink]="'/centre'"> Centre </a>
+      <a mat-button [routerLink]="'/test'"> Test </a>
+      <a mat-button [routerLink]="'/appointment'"> Appointment </a>
+      
+
+    </div>
+  </mat-toolbar-row>
+
+  
+</mat-toolbar>
+<router-outlet></router-outlet>-->
+<div class="container-fluid">
+<h1 style=" text-align: center; background-color: darkcyan;">
+  Health Care Management System 
+</h1>
+</div>
+<div class="container-fluid" >
+  
+  <!--<button class="btn" routerLinkActive="active" routerLink="add-centre">Add Centre</button>
+  <button class="btn" routerLinkActive="active" routerLink="delete-centre">Delete Centre</button>
+<button class="btn" routerLinkActive="active" routerLink="add-test">Add Test</button>
+<button class="btn" routerLinkActive="active" routerLink="delete-test">Delete Test</button>
+
+<button class="btn" routerLinkActive="active" routerLink="appointment">Appointment</button>-->
+
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <a class="navbar-brand" href="#">Health Care System</a>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="add-centre">Add Centre</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="delete-centre">Delete Centre</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="add-test">Add Test</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="delete-test">Delete Test</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="appointment">Appointment</a>
+    </li>
+  </ul>
+</nav>
+</div>
+<router-outlet></router-outlet>
